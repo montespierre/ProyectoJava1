@@ -13,12 +13,21 @@ import pe.com.weimont.app.service.FinancieraService;
  */
 public class Prueba01 {
     public static void main(String[] args) {
+        //variables
         double vf;
+        double va, r, n;
         
+        //entrada
+        va = 3;
+        r = 0.5;
+        n = 2;
+        
+        //Proceso
         FinancieraService servicio = new FinancieraService();
         
-        vf = servicio.calcVF(3, 0.5, 2);
+        vf = servicio.calcVF(va, r, n);
         
+        //Salida
         System.out.println(vf);
     }
     
