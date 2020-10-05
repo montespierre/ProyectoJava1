@@ -3,23 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pe.com.weimont.cafeteriawmj_s3;
+package pe.com.weimont.cafeteriawmj_s3.pruebas;
 
-import pe.com.weimont.cafeteriawmj_s3.view.CafeteriaMain;
+import pe.com.weimont.cafeteriawmj_s3.service.ArticuloService;
 
 /**
  *
  * @author montespierreg
  */
-public class CafeteriaWMJ_S3 {
-
-    /**
-     * @param args the command line arguments
-     */
+public class Prueba44 {
     public static void main(String[] args) {
-        CafeteriaMain.main(args);
-        
-        
+        ArticuloService articuloService1 = new ArticuloService();
+        System.out.println(articuloService1.getArticulos("Lapicero"));;
     }
+    
     
 }

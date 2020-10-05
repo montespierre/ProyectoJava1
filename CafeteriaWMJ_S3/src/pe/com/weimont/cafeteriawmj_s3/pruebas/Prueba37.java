@@ -3,23 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pe.com.weimont.cafeteriawmj_s3;
+package pe.com.weimont.cafeteriawmj_s3.pruebas;
 
-import pe.com.weimont.cafeteriawmj_s3.view.CafeteriaMain;
+import pe.com.weimont.cafeteriawmj_s3.model_dto.Borrar;
 
 /**
  *
  * @author montespierreg
  */
-public class CafeteriaWMJ_S3 {
-
-    /**
-     * @param args the command line arguments
-     */
+public class Prueba37 {
+    /*
     public static void main(String[] args) {
-        CafeteriaMain.main(args);
         
         
+        System.out.println(Borrar.myMap1.get(1));
     }
-    
+*/
 }

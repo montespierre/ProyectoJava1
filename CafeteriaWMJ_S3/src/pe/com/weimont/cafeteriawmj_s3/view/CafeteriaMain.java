@@ -9,6 +9,8 @@ import java.beans.PropertyVetoException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JInternalFrame;
+import pe.com.weimont.cafeteriawmj_s3.model_dto.SessionDetV_v31;
+import pe.com.weimont.cafeteriawmj_s3.service.VentaService;
 
 /**
  *
@@ -39,9 +41,11 @@ public class CafeteriaMain extends javax.swing.JFrame {
         menuProceso = new javax.swing.JMenu();
         menuProcesoArticulos = new javax.swing.JMenu();
         menuProcesoArticulosNuevo = new javax.swing.JMenuItem();
+        menuProcesoArticulosBuscar = new javax.swing.JMenuItem();
         menuProcesoEmpleados = new javax.swing.JMenu();
         menuProcesoEmpleadosNuevo = new javax.swing.JMenuItem();
         menuProcesoVentas = new javax.swing.JMenu();
+        menuProcesoVentasNueva = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -59,7 +63,20 @@ public class CafeteriaMain extends javax.swing.JFrame {
         menuProcesoArticulos.setText("Articulos");
 
         menuProcesoArticulosNuevo.setText("Nuevo");
+        menuProcesoArticulosNuevo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuProcesoArticulosNuevoActionPerformed(evt);
+            }
+        });
         menuProcesoArticulos.add(menuProcesoArticulosNuevo);
+
+        menuProcesoArticulosBuscar.setText("Buscar");
+        menuProcesoArticulosBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuProcesoArticulosBuscarActionPerformed(evt);
+            }
+        });
+        menuProcesoArticulos.add(menuProcesoArticulosBuscar);
 
         menuProceso.add(menuProcesoArticulos);
 
@@ -76,6 +93,15 @@ public class CafeteriaMain extends javax.swing.JFrame {
         menuProceso.add(menuProcesoEmpleados);
 
         menuProcesoVentas.setText("Ventas");
+
+        menuProcesoVentasNueva.setText("Nueva Venta");
+        menuProcesoVentasNueva.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuProcesoVentasNuevaActionPerformed(evt);
+            }
+        });
+        menuProcesoVentas.add(menuProcesoVentasNueva);
+
         menuProceso.add(menuProcesoVentas);
 
         menuBar.add(menuProceso);
@@ -106,6 +132,40 @@ public class CafeteriaMain extends javax.swing.JFrame {
             
         }
     }//GEN-LAST:event_menuProcesoEmpleadosNuevoActionPerformed
+
+    private void menuProcesoVentasNuevaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuProcesoVentasNuevaActionPerformed
+        try {
+            //VentaService.contador = 0;/////ver borrado//////////
+            //SessionDetV_v31.put(1, null);/////ver borrado/////
+            JInternalFrame view = new NuevaVenta();
+            desktopPane.add(view);
+            view.setVisible(true);
+            view.setMaximum(true);
+            
+        } catch (PropertyVetoException ex) {
+        }
+    }//GEN-LAST:event_menuProcesoVentasNuevaActionPerformed
+
+    private void menuProcesoArticulosNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuProcesoArticulosNuevoActionPerformed
+        //Ingresar Articulo//////////////////////////
+        try {
+            JInternalFrame view = new ArticuloNuevoView();
+            desktopPane.add(view);
+            view.setVisible(true);
+            view.setMaximum(true);
+        } catch (Exception e) {
+        }
+    }//GEN-LAST:event_menuProcesoArticulosNuevoActionPerformed
+
+    private void menuProcesoArticulosBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuProcesoArticulosBuscarActionPerformed
+        try {
+            JInternalFrame view = new ArticuloMostrarView();
+            desktopPane.add(view);
+            view.setVisible(true);
+            view.setMaximum(true);
+        } catch (Exception e) {
+        }
+    }//GEN-LAST:event_menuProcesoArticulosBuscarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -148,10 +208,12 @@ public class CafeteriaMain extends javax.swing.JFrame {
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenu menuProceso;
     private javax.swing.JMenu menuProcesoArticulos;
+    private javax.swing.JMenuItem menuProcesoArticulosBuscar;
     private javax.swing.JMenuItem menuProcesoArticulosNuevo;
     private javax.swing.JMenu menuProcesoEmpleados;
     private javax.swing.JMenuItem menuProcesoEmpleadosNuevo;
     private javax.swing.JMenu menuProcesoVentas;
+    private javax.swing.JMenuItem menuProcesoVentasNueva;
     private javax.swing.JMenuItem openMenuItem;
     // End of variables declaration//GEN-END:variables
 
